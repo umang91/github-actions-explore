@@ -10,3 +10,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: sh script.sh
