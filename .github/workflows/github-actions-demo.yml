@@ -16,4 +16,4 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      - run: kotlin ./github/scripts/action-demo.main.kts
+      - run: kotlin .github/scripts/action-demo.main.kts
