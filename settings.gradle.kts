@@ -1,8 +1,8 @@
 pluginManagement {
   repositories {
+    gradlePluginPortal()
     google()
     mavenCentral()
-    gradlePluginPortal()
   }
 }
 dependencyResolutionManagement {
@@ -13,4 +13,6 @@ dependencyResolutionManagement {
   }
 }
 rootProject.name = "GithubActionsTest"
-include ':app'
+include(":app")
+
+includeBuild("publishing-plugin")
