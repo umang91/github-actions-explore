@@ -1,7 +1,8 @@
 #!/usr/bin/env kotlin
 
 fun executeCommandOnShell(command: String) {
-    val process = ProcessBuilder("/bin/bash", "-c", command).inheritIO().start()
+    val process = ProcessBuilder("/bin/bash", "-c", command).inheritIO().redirectErrorStream(true)
+        .start()
     process.waitFor()
 }
 
