@@ -4,19 +4,32 @@ on:
 
 jobs:
   publish:
-    name: EnvTest
+    name: Publish
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+
+      - name: Grant Permission to Execute Gradle
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+
       - name: read variables
         run: |
-          echo "variable values"
-          echo $sampleEnvVariable
-          echo $hardCodedVariable
-          echo "directly printing env from settings"
-          echo "${{ vars.sampleEnvVariable }}"
+          echo "reading🚀"
+          ./gradlew mylibrary:printProperty
+          echo "read✅"
         env:
           sampleEnvVariable: ${{ vars.sampleRepoVariable }}
           hardCodedVariable: hardCodedVariableValue

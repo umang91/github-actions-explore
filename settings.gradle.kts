@@ -16,3 +16,4 @@ rootProject.name = "GithubActionsTest"
 include(":app")
 
 includeBuild("publishing-plugin")
+include(":mylibrary")
