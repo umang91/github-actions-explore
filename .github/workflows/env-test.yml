@@ -1,6 +1,8 @@
 name: EnvTest
 on:
   workflow_dispatch:
+env:
+  sampleEnvVariable: ${{ env.SAMPLEENVVARIABLE }}
 
 jobs:
   publish:
