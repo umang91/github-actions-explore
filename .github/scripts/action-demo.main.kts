@@ -14,3 +14,11 @@ exitValue = executeCommandOnShell("./gradlew ktlintCheck")
 exitValue = executeCommandOnShell("./gradlew test")
 //println("unit test exit value $exitValue")
 if (exitValue != 0) Runtime.getRuntime().exit(1)
+
+val processBuilders = ProcessBuilder.startPipeline(listOf(
+    ProcessBuilder("/bin/bash", "-c", "./gradlew assemble").inheritIO().redirectErrorStream(true),
+    ProcessBuilder("/bin/bash", "-c", "./gradlew ktlintCheck").inheritIO().redirectErrorStream
+        (true),
+    ProcessBuilder("/bin/bash", "-c", "./gradlew test").inheritIO().redirectErrorStream(true)
+    )
+)

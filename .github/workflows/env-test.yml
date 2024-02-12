@@ -1,0 +1,17 @@
+name: EnvTest
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: EnvTest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: read variables
+        run: |
+          echo $sampleEnvVariable
+        env:
+          sampleEnvVariable: ${{ env.SAMPLEENVVARIABLE }}
