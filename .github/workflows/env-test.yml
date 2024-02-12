@@ -16,7 +16,7 @@ jobs:
           echo $sampleEnvVariable
           echo $hardCodedVariable
           echo "directly printing env from settings"
-          echo "${{ env.sampleEnvVariable }}"
+          echo "${{ vars.sampleEnvVariable }}"
         env:
-          sampleEnvVariable: ${{ env.SAMPLEREPOVARIABLE }}
+          sampleEnvVariable: ${{ vars.sampleRepoVariable }}
           hardCodedVariable: hardCodedVariableValue
