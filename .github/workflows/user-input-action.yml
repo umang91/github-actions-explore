@@ -10,7 +10,5 @@ jobs:
     User-Input:
         runs-on: ubuntu-latest
         steps:
-            - run: |
-                echo "value entered by user: ${{github.event.inputs.userInput}}"
-                kotlin .github/scripts/input-demo.main.kts ${{github.event.inputs.userInput}}
+            - run: kotlin .github/scripts/input-demo.main.kts ${{github.event.inputs.userInput}}
 
