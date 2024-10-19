@@ -1,0 +1,15 @@
+name: Test Input in action
+on: 
+    workflow_dispatch:
+      inputs:
+        userInput:
+          description: 'Enter some value'     
+          required: true
+    
+jobs:
+    User-Input:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                echo "value entered by user: ${{github.event.inputs.userInput}}"
+
