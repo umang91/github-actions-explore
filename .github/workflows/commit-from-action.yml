@@ -19,6 +19,8 @@ jobs:
       - run: |
             touch testFile.txt
             echo "Dummy text from action" > testFile.txt
+            git config --global user.name 'umang91'
+            git config --global user.email 'umang91@users.noreply.github.com
             git add .
             git commit -m "dummy file from action"
             git push origin main
