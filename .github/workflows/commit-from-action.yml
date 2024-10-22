@@ -8,7 +8,9 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }}"
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+            token: ${{ secrets.ACCESS_TOKEN }}
       - run: |
             touch testFile.txt
             echo "Dummy text from action" > testFile.txt
