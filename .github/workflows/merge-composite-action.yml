@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        path: source
 
     - name: test path
       run: |
@@ -14,4 +16,6 @@ jobs:
     
     - name: Update master
       uses: ./.github/scripts/action-git-development-to-master
+      with:
+        dir: source
           
