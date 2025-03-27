@@ -6,16 +6,12 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
-      with:
-        path: source
 
     - name: test path
       run: |
         pwd
-        echo $pwd
+        echo "$pwd"
     
     - name: Update master
       uses: ./scripts/action-git-development-to-master
-      with:
-        path: source
           
