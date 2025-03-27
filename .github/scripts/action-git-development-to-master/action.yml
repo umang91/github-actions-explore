@@ -10,7 +10,7 @@ runs:
         #switch to the development branch
         git checkout development
         # switch to master and merge development
-        git checkout origin/main
+        git checkout main
         git merge development
         # push merged changes to remote
         git push origin main
