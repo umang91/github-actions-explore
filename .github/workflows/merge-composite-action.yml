@@ -14,14 +14,9 @@ jobs:
       with:
         repository: umang91/action-scripts
         path: action-scripts
-
-    - name: test path
-      run: |
-        pwd
-        echo "$pwd"
     
     - name: Update master
       uses: ./action-scripts/action-git-development-to-master
       with:
-        dir: source
+        working-directory: source
           
