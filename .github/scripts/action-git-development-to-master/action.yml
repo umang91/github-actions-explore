@@ -4,6 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: Merge development to master
+      shell: bash
       run: |
         #switch to the development branch
         git checkout development
