@@ -1,1 +1,3 @@
 Dummy text from action
+
+This is a dummy text pushed into the development branch
