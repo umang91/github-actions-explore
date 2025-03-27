@@ -10,7 +10,7 @@ jobs:
         path: source
     
     - name: Update master
-      uses: ./script/action-git-development-to-master
+      uses: ./scripts/action-git-development-to-master
       with:
         path: source
           
