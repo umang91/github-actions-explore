@@ -1,0 +1,16 @@
+name: 'Merge developement to master Action'
+description: 'Action to merge the development branch to master.'
+runs:
+  using: "composite"
+  steps:
+    - name: Merge development to master
+      run: |
+        #switch to the development branch
+        git checkout development
+        # back merge master to development(mostly a safe check)
+        git merge origin/master
+        # switch to master and merge development
+        git checkout master
+        git merge development
+        # push merged changes to remote
+        git push origin master
