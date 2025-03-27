@@ -8,10 +8,8 @@ runs:
       run: |
         #switch to the development branch
         git checkout development
-        # back merge master to development(mostly a safe check)
-        git merge origin/master
         # switch to master and merge development
-        git checkout master
+        git checkout main
         git merge development
         # push merged changes to remote
-        git push origin master
+        git push origin main
