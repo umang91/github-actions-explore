@@ -9,13 +9,19 @@ jobs:
       with:
         path: source
 
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        repository: umang91/action-scripts
+        path: action-scripts
+
     - name: test path
       run: |
         pwd
         echo "$pwd"
     
     - name: Update master
-      uses: ./.github/scripts/action-git-development-to-master
+      uses: ./action-scripts/action-git-development-to-master
       with:
         dir: source
           
