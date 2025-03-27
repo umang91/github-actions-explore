@@ -13,5 +13,5 @@ jobs:
         echo "$pwd"
     
     - name: Update master
-      uses: ./scripts/action-git-development-to-master
+      uses: ./.github/scripts/action-git-development-to-master
           
