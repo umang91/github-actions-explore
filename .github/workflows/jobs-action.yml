@@ -1,0 +1,21 @@
+name: explore jobs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print job ID
+        run: |
+          echo "Job ID: ${{ github.job }}"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print job ID
+        run: |
+          echo "Job ID: ${{ github.job }}"
