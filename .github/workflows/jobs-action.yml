@@ -12,8 +12,12 @@ jobs:
       - name: Print job ID
         run: |
           echo "Job ID: ${{ github.job }}"
+      - name: Run a script
+        run: kotlin .github/scripts/action-demo.main.kts
+
 
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Print job ID
